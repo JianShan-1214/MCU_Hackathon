@@ -1,0 +1,52 @@
+extends layout
+block content
+  nav.navbar.navbar-light
+      a.navbar-brand(href='#') 銘傳大學點餐平臺
+      a.navbar-toggler.d-md-none(href='#shopcart') 購物車
+  .container-fluid
+    .row
+      .col
+        .jumbotron.text-white.jumbotron-image.shadow(style='background-image: url(https://i.imgur.com/7Pr53aV.jpg);')
+          p.display-3.text-center 四海八方
+          // <hr class="my-3">
+          // <p class="h3 text-center"></p>
+
+        //each datas,varies in dataset
+          ul
+            li= varies 
+            each data,key in datas
+              li= data["品項"]
+              li= data["價格"]
+        each datas,varies in dataset
+          .container
+            .row
+              .col
+                h4= varies
+                .card-deck
+                  each data,key in datas
+                    a.btn(href='#')
+                      .card
+                        .card-body
+                          h5.card-title= data["品項"]
+                          p= '$'+data["價格"]
+
+      #shopcart.col-md-4.col-sm-12
+        .container
+          .row
+            .col-sm-12
+              p.h5 購物車
+          .row
+            .col-sm-12
+              span#foodSel
+                // keep
+              .float-right
+                .input-group
+                  .input-group-prepend
+                    button#add.btn.btn-secondary +
+                  input#nums.text-center(type='text')
+                  .input-group-append
+                    button#remove.btn.btn-secondary -
+          .row
+            .col-sm-12
+              hr.my-3
+              a.btn.btn-block.btn-primary(href='#') 結帳
