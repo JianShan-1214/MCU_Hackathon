@@ -29,6 +29,5 @@ router.get('/menus', function(req, res, next) {
 });
   
 });
-firebase.database().ref('')
 
 module.exports = router;
