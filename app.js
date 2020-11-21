@@ -6,13 +6,18 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
-var mysql      = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'node',
-  password : '1234'
+var admin = require('firebase-admin');
+var firebase = require('firebase');
+var app = firebase.initializeApp({
+    databaseURL: 'https://hackathon-4e051.firebaseio.com/'
 });
+
+// var mysql      = require('mysql');
+// var connection = mysql.createConnection({
+//   host     : 'localhost',
+//   user     : 'node',
+//   password : '1234'
+// });
 
 var app = express();
 

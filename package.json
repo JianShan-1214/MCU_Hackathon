@@ -10,8 +10,22 @@
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "firebase": "^8.1.1",
+    "firebase-admin": "^9.4.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11"
-  }
+  },
+  "description": "",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JianShan-1214/MCU_Hackathon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JianShan-1214/MCU_Hackathon/issues"
+  },
+  "homepage": "https://github.com/JianShan-1214/MCU_Hackathon#readme"
 }
