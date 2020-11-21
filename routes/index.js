@@ -22,6 +22,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: '銘傳大學點餐平臺' });
 });
 
+router.get('/shops', function(req, res, next){
+	res.render('shops')
+});
+
+
 router.get('/menus', function(req, res, next) {
   db.ref('/四海八方/0').on('value',(snap)=>{
     var tmp = snap.val();
