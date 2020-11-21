@@ -24,7 +24,7 @@ block content
                 h4= varies
                 .card-deck
                   each data,key in datas
-                    a.btn(href='#')
+                    button.btn(onclick=`order("${data["品項"]}",${data["價格"]})`)
                       .card
                         .card-body
                           h5.card-title= data["品項"]
@@ -37,16 +37,18 @@ block content
               p.h5 購物車
           .row
             .col-sm-12
-              span#foodSel
+              div#foodSel
                 // keep
-              .float-right
-                .input-group
-                  .input-group-prepend
-                    button#add.btn.btn-secondary +
-                  input#nums.text-center(type='text')
-                  .input-group-append
-                    button#remove.btn.btn-secondary -
+                //-.float-right
+                  .input-group
+                    .input-group-prepend
+                      button#add.btn.btn-secondary +
+                    span#nums.input-group-text 0
+                    .input-group-append
+                      button#remove.btn.btn-secondary -
           .row
             .col-sm-12
               hr.my-3
               a.btn.btn-block.btn-primary(href='#') 結帳
+block scripts
+  script(src='javascripts/menu.js')
