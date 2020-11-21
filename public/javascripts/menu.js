@@ -40,9 +40,18 @@ function sum(vary,price){
   for (i in foodCount){
     total += foodCount[i] * foodPrice[i];
   }
+  total = Math.round(total);
   //total += foodCount[vary] * price;
-  $("#total").text(Math.round(total));
+  $("#total").text(total);
 }
+
+$("button:contains('結帳')").click(()=>{
+  $("#cartlist").text("");
+  for (i in foodCount){
+    $("#cartlist").append(`<li>${i}: ${foodCount[i]} x $${foodPrice[i]} = ${foodCount[i]*foodPrice[i]}</li>`);
+  }
+  $("#sum").text(`總計 ${total} 元`);
+})
 
 //$("#add").click(()=>{
 //  foodCount++;

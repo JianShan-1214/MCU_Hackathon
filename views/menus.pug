@@ -53,6 +53,21 @@ block content
                | 總計 
                span#total 0
                |  元
-              a.btn.btn-block.btn-primary(href='#') 結帳
+              button.btn.btn-block.btn-primary(data-toggle="modal",data-target="#cashModal") 結帳
+              .modal.fade#cashModal
+                .modal-dialog
+                  .modal-content
+                    .modal-header
+                      h5.modal-title 結帳
+                      button.close(data-dismiss='modal')
+                        span &times;
+                    .modal-body
+                      p 欲購買的餐點如下:
+                      ul#cartlist
+                      p.text-right#sum
+                    .modal-footer
+                      p 付款方式
+                      button.btn.btn-primary 現金
+                      button.btn.btn-success Line Pay
 block scripts
   script(src='javascripts/menu.js')
