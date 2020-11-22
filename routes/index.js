@@ -23,9 +23,25 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/shops', function(req, res, next){
-	res.render('shops')
+	res.render('shops');
 });
 
+router.get('/orders', function(req, res, next){
+  db.ref('/四海八方/1').on('value',(snap)=>{
+    var tmp = snap.val();
+    res.render('orders', { title: '銘傳大學點餐平臺', dataset: tmp });
+});
+
+});
+var cnt = 0;
+router.post('/orders',function(req,res,next){
+  db.ref('/四海八方/1').update({[cnt]:req.body})
+  .catch((err)=>{
+    console.log(err);
+  })
+  cnt++;
+  res.send("received request.");
+});
 
 router.get('/menus', function(req, res, next) {
   db.ref('/四海八方/0').on('value',(snap)=>{

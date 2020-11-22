@@ -53,6 +53,25 @@ $("button:contains('結帳')").click(()=>{
   $("#sum").text(`總計 ${total} 元`);
 })
 
+$("#incash").click(()=>{
+  $.ajax({
+    url: 'orders',
+    method: "POST",
+    dataType: "json",
+    contentType: "application/json;charset=utf-8",
+    data: JSON.stringify(foodCount),
+    success: (response) => {
+      console.log(response);
+    },
+    error: (err) => {
+    console.log(err);
+  }
+  })
+  
+  $("#incash").text("已送出！");
+  $("#incash").prop("disabled",true);
+})
+
 //$("#add").click(()=>{
 //  foodCount++;
 //  $("#nums").val(foodCount);

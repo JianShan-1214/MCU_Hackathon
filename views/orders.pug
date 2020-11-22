@@ -1,0 +1,15 @@
+extends layout
+block content
+  nav.navbar.navbar-light
+    a.navbar-brand(href='#') 銘傳大學點餐平臺
+  .jumbotron
+    p.display-4 訂單檢視
+  .container
+    .row
+      each data,keys in dataset
+        .col
+          .card
+            .card-body
+              each cell,key in data
+                if cell !== " "
+                  p= key + 'x' + cell
