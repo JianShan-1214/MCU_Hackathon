@@ -3,4 +3,6 @@ extends layout
 block content
   h1= message
   h2= error.status
-  pre #{error.stack}
+  if error.status == 404
+    img(src="//i.imgur.com/9nwSILN.png")
+  //-pre #{error.stack}
